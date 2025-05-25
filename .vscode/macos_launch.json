@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) Launch MQSim",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/MQSim",
+            "args": ["-i", "../ssd_config/test_ssd.xml", "-w", "../workload_config/test_wkd.xml"], // 필요한 경우 인자 추가
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "lldb 설정 활성화",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build", // 빌드 태스크와 연결
+            "miDebuggerPath": "/Users/jwjeong/.vscode/extensions/ms-vscode.cpptools-1.25.3-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi"
+        }
+    ]
+}
